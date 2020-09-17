@@ -33,7 +33,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: echo $(ls -l)
-      - run: zip -r untab-${{ github.ref }}.zip dist/*
+      - run: zip -r untab-${{ github.event.release.tag_name }}.zip dist/*
       - name: Upload Release Asset
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
